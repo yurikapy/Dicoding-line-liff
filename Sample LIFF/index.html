@@ -1,144 +1,297 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LIFF Starter</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="liffAppContent">
-            <!-- ACTION BUTTONS -->
-            <div class="buttonGroup">
-                <div class="buttonRow">
-                    <button id="openWindowButton">Open External Window</button>
-                    <button id="closeWindowButton">Close LIFF App</button>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>AYO MAKAN DONG!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Google Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Image -->
+        <img src="img/banner.jpg" class="img-fluid" alt="...">
+
+        <!-- Login User LINE -->
+        <div class="row">
+            <div class="col-xs-12 col-lg-12" id="liffLogin">
+
+                <!-- Header -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <h1 align="center"> AYO MAKAN DONG !</h1>
+                        <hr>
+                    </div>
                 </div>
-                <div class="buttonRow">
-                    <button id="scanQrCodeButton">Open QR Code Reader</button>
-                    <button id="sendMessageButton">Send Message</button>
-                </div>
-                <div class="buttonRow">
-                    <button id="getAccessToken">Get Access Token</button>
-                    <button id="getProfileButton">Get Profile</button>
-                </div>
-                <div class="buttonRow">
-                    <button id="shareTargetPicker">Open Share Target Picker</button>
-                </div>
-            </div>
-            <div id="shareTargetPickerMessage"></div>
-            <!-- ACCESS TOKEN DATA -->
-            <div id="accessTokenData" class="hidden textLeft">
-                <h2>Access Token</h2>
-                <a href="#" onclick="toggleAccessToken()">Close Access Token</a>
-                <table>
-                    <tr>
-                        <th>accessToken</th>
-                        <td id="accessTokenField"></td>
-                    </tr>
-                </table>
-            </div>
-            <!-- SCAN QR RESULT -->
-            <div id="scanQr" class="hidden textLeft">
-                <h2>QR Code reader</h2>
-                <a href="#" onclick="toggleQrCodeReader()">Close QR Code Reader Result</a>
-                <table>
-                    <tr>
-                        <th>scanCode Result</th>
-                        <td id="scanQrField"></td>
-                    </tr>
-                </table>
-            </div>
-            <!-- PROFILE INFO -->
-            <div id="profileInfo" class="hidden textLeft">
-                <h2>Profile</h2>
-                <a href="#" onclick="toggleProfileData()">Close Profile</a>
-                <div id="profilePictureDiv">
-                </div>
-                <table>
-                    <tr>
-                        <th>userId</th>
-                        <td id="userIdProfileField"></td>
-                    </tr>
-                    <tr>
-                        <th>displayName</th>
-                        <td id="displayNameField"></td>
-                    </tr>
-                    <tr>
-                        <th>statusMessage</th>
-                        <td id="statusMessageField"></td>
-                    </tr>
-                </table>
-            </div>
-            <!-- LIFF DATA -->
-            <div id="liffData">
-                <h2 id="liffDataHeader" class="textLeft">LIFF Data</h2>
-                <table>
-                    <tr>
-                        <th>OS</th>
-                        <td id="deviceOS" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>Language</th>
-                        <td id="browserLanguage" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>LIFF SDK Version</th>
-                        <td id="sdkVersion" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>LINE Version</th>
-                        <td id="lineVersion" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>isInClient</th>
-                        <td id="isInClient" class="textLeft"></td>
-                    </tr>
-                    <tr>
-                        <th>isLoggedIn</th>
-                        <td id="isLoggedIn" class="textLeft"></td>
-                    </tr>
-                </table>
-            </div>
-            <!-- LOGIN LOGOUT BUTTONS -->
-            <div class="buttonGroup">
-                <button id="liffLoginButton">Log in</button>
-                <button id="liffLogoutButton">Log out</button>
-            </div>
-            <div id="statusMessage">
-                <div id="isInClientMessage"></div>
-                <div id="apiReferenceMessage">
-                    <p>Available LIFF methods vary depending on the browser you use to open the LIFF app.</p>
-                    <p>Please refer to the <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">API reference page</a> for more information.</p>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> HAI YUK MAREEE PESEN MAKAN!</h5>
+                        <p class="card-text">Halo,Sobatkuu,YUK LOGIN! Lalu pesan Biar Kenyang !</p>
+                        <button id="button_login" class="btn btn-success w-100">Login</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- LIFF ID ERROR -->
-        <div id="liffIdErrorMessage" class="hidden">
-            <p>You have not assigned any value for LIFF ID.</p>
-            <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
-            <code id="code-block">
-                <ol>
-                    <li>Go to `Dashboard` in your Heroku account.</li>
-                    <li>Click on the app you just created.</li>
-                    <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
-                    <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
-                    <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
-                </ol>
-            </code>
-            <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
-            <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
+
+        <!-- Content -->
+        <div class="row">
+            <div class="col-xs-12 col-lg-12" ng-controller="listContactCtrl" id="liffAppContent">
+
+                <!-- Header Content -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <h1 align="center">AYO MAKAN DONG!</h1>
+                        <hr>
+                    </div>
+                </div>
+
+                <!-- Card User Information -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                HAI YUK MAREEE PESEN MAKAN!  
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Halo, <span id="card_nama_user"></span></h5>
+                                <p class="card-text"> Ayok Makan !Kami Bersedia Melayani Mu</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <!-- Menu -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                MENU MAKANAN BUATMU
+                            </div>
+                            <div class="card-body">
+                                <!-- Accordion Menu -->
+                                <div class="accordion" id="accordion-menu">
+
+                                    <!-- Accordion Menu Makanan -->
+                                    <div class="accordion-item">
+
+                                        <!-- Accordion Makanan Header -->
+                                        <h2 class="accordion-header" id="heading-makanan">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                Menu Makanan
+                                            </button>
+                                        </h2>
+
+                                        <!-- Accordion Makanan Body -->
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="heading-makanan" data-bs-parent="#accordion-menu">
+                                            <div class="accordion-body">
+
+                                                <!-- Item Si Hitam Manis -->
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <strong class="card-title">Pancake DUREN</strong>
+                                                        <p class="card-text">Rp. 15000</p>
+                                                        <div class="text-end">
+                                                            <button class="btn btn-danger"
+                                                                onclick="KurangMakan('Ayomakancake');"><i
+                                                                    class="material-icons center">remove</i></button>
+                                                            <span id="Ayomakancakejumlah">0</span>
+                                                            <button class="btn btn-success"
+                                                                onclick="TambahMakan('Ayomakancake');"><i
+                                                                    class="material-icons center">add</i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Item Peri Stroberi -->
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <strong class="card-title">SURABI DUREN</strong>
+                                                        <p class="card-text">Rp. 12000</p>
+                                                        <div class="text-end">
+                                                            <button class="btn btn-danger"
+                                                                onclick="PenguranganMakanan('Ayomakansurabi');"><i
+                                                                    class="material-icons center">remove</i></button>
+                                                            <span id="ayampenyetjumlah">0</span>
+                                                            <button class="btn btn-success"
+                                                                onclick="NambahMakanan('Ayomakansurabi');"><i
+                                                                    class="material-icons center">add</i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Accordion Menu Minuman -->
+                                    <div class="accordion-item">
+
+                                        <!-- Accordion Minuman Header-->
+                                        <h2 class="accordion-header" id="heading-minuman">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                Menu Minuman 
+                                            </button>
+                                        </h2>
+
+                                        <!-- Accordion Minuman Body -->
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="heading-minuman" data-bs-parent="#accordion-menu">
+                                            <div class="accordion-body">
+
+                                                <!-- Item Es Jeruk -->
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <strong class="card-title">MILKSHAKE DUREN </strong>
+                                                        <p class="card-text">Rp. 15000</p>
+                                                        <div class="text-end">
+                                                            <button class="btn btn-danger"
+                                                                onclick="PenguranganMinuman('inishakeduren');"><i
+                                                                    class="material-icons center">remove</i></button>
+                                                            <span id="esjerukjumlah">0</span>
+                                                            <button class="btn btn-success"
+                                                                onclick="NambahMinuman('inishakeduren');"><i
+                                                                    class="material-icons center">add</i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Item Es Teh -->
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <strong class="card-title">SUSU DUREN BOBA</strong>
+                                                        <p class="card-text">Rp. 20000</p>
+                                                        <div class="text-end">
+                                                            <button class="btn btn-danger"
+                                                                onclick="PenguranganMinuman('iniBoba');"><i
+                                                                    class="material-icons center">remove</i></button>
+                                                            <span id="estehjumlah">0</span>
+                                                            <button class="btn btn-success"
+                                                                onclick="NambahMinuman('iniBoba');"><i
+                                                                    class="material-icons center">add</i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <!-- Total Belanja -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Total Belanja Kamu
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Makanan:</strong></p>
+                                <p>
+                                    <span id="pecelleletotal">0</span> item <strong>Pancake DUREN</strong><br>
+                                    <span id="ayampenyettotal">0</span> item <strong>SURABI DUREN/strong><br>
+                                </p>
+                                <p class="text-end"><strong>Rp. </strong><span id="makanantotal">0</span></p>
+
+                                <p><strong>Minuman:</strong></p>
+                                <p>
+                                    <span id="jeruktotal">0</span> item <strong>MILKSHAKE DUREN</strong><br>
+                                    <span id="tehtotal">0</span> item <strong>SUSU DUREN BOBA</strong><br>
+                                </p>
+                                <p class="text-end"><strong>Rp. </strong><span id="minumantotal">0</span></p>
+
+                                <button id="button_CO" class="btn btn-success w-100" disabled>Pesan Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <!-- Buka di external / di aplikasi LINE -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <button id="button_navigasi" class="btn btn-danger w-100"></button>
+                    </div>
+                </div>
+                <br>
+
+            </div>
         </div>
-        <!-- LIFF INIT ERROR -->
-        <div id="liffInitErrorMessage" class="hidden">
-            <p>Something went wrong with LIFF initialization.</p>
-            <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
+
+        <!-- Liff Status Message -->
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+                <!-- LIFF ID Error -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <div id="liffIdErrorMessage">
+                            <p>You have not assigned any value for LIFF ID.</p>
+                            <p>If you are running the app using Node.js, please set the LIFF ID as an environment
+                                variable in your
+                                Heroku account follwing the below steps: </p>
+                            <code id="code-block">
+                        <ol>
+                            <li>Go to `Dashboard` in your Heroku account.</li>
+                            <li>Click on the app you just created.</li>
+                            <li>Click on `Settings` and toggle `Reveal Config Vars`.</li>
+                            <li>Set `MY_LIFF_ID` as the key and the LIFF ID as the value.</li>
+                            <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
+                        </ol>
+                    </code>
+                            <p>If you are using any other platform, please add your LIFF ID in the
+                                <code>index.html</code> file.
+                            </p>
+                            <p>For more information about how to add your LIFF ID, see <a
+                                    href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing
+                                    the LIFF
+                                    app</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LIFF Init Error -->
+                <div class="row">
+                    <div class="col-xs-12 col-lg-12">
+                        <div id="liffInitErrorMessage">
+                            <p>Something went wrong with LIFF initialization.</p>
+                            <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen,
+                                or if an
+                                error occurs in the process of <code>liff.init()</code>.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- NODE.JS LIFF ID ERROR -->
-        <div id="nodeLiffIdErrorMessage" class="hidden">
-            <p>Unable to receive the LIFF ID as an environment variable.</p>
-        </div>
-        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-        <script src="liff-starter.js"></script>
-    </body>
+    </div>
+
+</body>
+
+<!-- Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+<!-- Additional Script -->
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script src="pecellelecakman-config.js"></script>
+<script src="liff-Duren.js"></script>
+
 </html>
