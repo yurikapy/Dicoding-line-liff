@@ -121,7 +121,7 @@ function KurangMinum(anekaMinuman) {
             }
 
             jumlahBoba.innerHTML = currentTotal;
-            totalboba.innerHTML = currentTotal;
+            totalBoba.innerHTML = currentTotal;
             break;
         default:
             break;
@@ -146,10 +146,10 @@ function checkoutCO() {
     var strukBelanja = "Hai, " + namaUser.innerHTML + "\n\n" +
         "Terimakasih telah PESAN DI AYO MAKAN:))\n" +
         "INI LAHHH rincian harus anda bayar : \n\n" +
-        totalcake.innerHTML + " pcs : Rp. " + totalcakeHarga + "\n" +
-        totalsurabi.innerHTML + " pcs: Rp. " + totalsurabiHarga + "\n" +
-        totalshake.innerHTML + " pcs: Rp. " + totalshakeHarga + "\n" +
-        totalboba.innerHTML + " pcs: Rp. " + totalbobaHarga + "\n\n" +
+        totalCake.innerHTML + " pcs : Rp. " + totalCakeHarga + "\n" +
+        totalSurabi.innerHTML + " pcs: Rp. " + totalSurabiHarga + "\n" +
+        totalShake.innerHTML + " pcs: Rp. " + totalShakeHarga + "\n" +
+        totalBoba.innerHTML + " pcs: Rp. " + totalBobaHarga + "\n\n" +
         "Maka,\n" +
         "Total harga makanan: Rp. " + totalHargaMakanan.innerHTML + "\n" +
         "Total harga minuman: Rp. " + totalHargaMinuman.innerHTML + "\n\n" +
@@ -165,8 +165,8 @@ function statusButtonCM() {
         totalshakekHarga == 0 &&
         totalbobaHarga == 0 &&
     ) {
-        document.getElementById("button_CO").enabled= true;
+        document.getElementById("button_CO").disbled= true;
     } else {
-        document.getElementById("button_CO").enabled = false;
+        document.getElementById("button_CO").disabled = false;
     }
 }
