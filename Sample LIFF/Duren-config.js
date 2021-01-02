@@ -42,7 +42,7 @@ function TambahMakan(anekamakanan) {
 function KurangMakan(anekamakanan) {
     switch (anekamakanan) {
         case "Ayomakancake":
-            var currentTotal = jumlahAyomakancake.innerHTML;
+            var currentTotal = jumlahAyoMakancake.innerHTML;
             currentTotal = parseInt(currentTotal);
 
             if (currentTotal == 0) {
@@ -51,11 +51,11 @@ function KurangMakan(anekamakanan) {
                 currentTotal--;
             }
 
-            jumlahAyomakancake.innerHTML= currentTotal;
+            jumlahAyoMakancake.innerHTML= currentTotal;
             totalcake.innerHTML = currentTotal;
             break;
         case "Ayomakansurabi":
-            var currentTotal = jumlahAyomakansurabi.innerHTML;
+            var currentTotal = jumlahAyoMakansurabi.innerHTML;
             currentTotal = parseInt(currentTotal);
 
             if (currentTotal == 0) {
@@ -64,8 +64,8 @@ function KurangMakan(anekamakanan) {
                 currentTotal--;
             }
 
-            jumlahAyomakansurabi.innerHTML = currentTotal;
-            totalsurabi.innerHTML = currentTotal;
+            jumlahAyoMakansurabi.innerHTML = currentTotal;
+            totalSurabi.innerHTML = currentTotal;
             break;
         default:
             break;
