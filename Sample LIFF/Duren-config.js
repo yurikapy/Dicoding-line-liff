@@ -1,37 +1,37 @@
 // Menu
-var jumlahAyomakancake = document.getElementById("Ayomakancakejumlah");
-var jumlahAyomakansurabi = document.getElementById("Ayomakansurabijumlah");
-var jumlahsakdur = document.getElementById("sakdurjumlah");
+var jumlahAyoMakancake = document.getElementById("Ayomakancakejumlah");
+var jumlahAyoMakansurabi = document.getElementById("Ayomakansurabijumlah");
+var jumlahSakdur = document.getElementById("sakdurjumlah");
 var jumlahBoba= document.getElementById("Bobajumlah");
 
 // Total Belanja
 var totalHargaMakanan = document.getElementById("makanantotal");
 var totalHargaMinuman = document.getElementById("minumantotal");
-var totalcake= document.getElementById("caketotal");
-var totalsurabi = document.getElementById("surabitotal");
-var totalshake = document.getElementById("shaketotal");
-var totalboba = document.getElementById("bobatotal");
+var totalCake= document.getElementById("caketotal");
+var totalSurabi = document.getElementById("surabitotal");
+var totalShake = document.getElementById("shaketotal");
+var totalBoba = document.getElementById("bobatotal");
 
-var totalcakeHarga;
-var totalsurabiHarga;
-var totalshakeHarga;
-var totalbobaHarga;
+var totalCakeHarga;
+var totalSurabiHarga;
+var totalShakeHarga;
+var totalobaHarga;
 
 function TambahMakan(anekamakanan) {
     switch (anekamakanan) {
         case "Ayomakancake":
-            var currentTotal = jumlahAyomakancake.innerHTML;
+            var currentTotal = jumlahAyoMakancake.innerHTML;
             currentTotal = parseInt(currentTotal);
             currentTotal++;
-            jumlahAyomakancake.innerHTML = currentTotal;
-            totalAyomakancake.innerHTML = currentTotal;
+            jumlahAyoMakancake.innerHTML = currentTotal;
+            totalCake.innerHTML = currentTotal;
             break;
         case "Ayomakansurabi":
             var currentTotal = jumlahAyomakansurabi.innerHTML;
             currentTotal = parseInt(currentTotal);
             currentTotal++;
-            jumlahAyomakansurabi.innerHTML = currentTotal;
-            totalAyomakansurabi.innerHTML = currentTotal;
+            jumlahAyoMakansurabi.innerHTML = currentTotal;
+            totalSurabi.innerHTML = currentTotal;
             break;
         default:
             break;
@@ -107,8 +107,8 @@ function KurangMinum(anekaMinuman) {
                 currentTotal--;
             }
 
-            jumlahsakdur.innerHTML = currentTotal;
-            totalshake.innerHTML = currentTotal;
+            jumlahSakdur.innerHTML = currentTotal;
+            totalShake.innerHTML = currentTotal;
             break;
         case "iniBoba":
             var currentTotal = jumlahBoba.innerHTML;
