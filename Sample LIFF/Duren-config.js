@@ -87,7 +87,7 @@ function TambahMinum(anekaMinuman) {
             currentTotal = parseInt(currentTotal);
             currentTotal++;
             jumlahBoba.innerHTML = currentTotal;
-            totalboba.innerHTML = currentTotal;
+            totalBoba.innerHTML = currentTotal;
             break;
         default:
             break;
@@ -161,9 +161,9 @@ function checkoutCO() {
 function statusButtonCM() {
     if (
         totalcakeHarga == 0 &&
-        totalsurabiPenyetHarga == 0 &&
+        totalsurabiHarga == 0 &&
         totalshakekHarga == 0 &&
-        totalbobaHarga == 0
+        totalbobaHarga == 0 &&
     ) {
         document.getElementById("button_CO").enabled= true;
     } else {
