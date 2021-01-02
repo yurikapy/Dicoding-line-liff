@@ -130,10 +130,10 @@ function KurangMinum(anekaMinuman) {
 }
 
 function hitungTotalBeli() {
-    totalcakeHarga = parseInt(totalcake.innerHTML) * 15000;
-    totalsurabiHarga = parseInt(totalsurabi.innerHTML) * 12000;
-    totalshakeHarga = parseInt(totalEsJeruk.innerHTML) * 15000;
-    totalbobaHarga = parseInt(totalEsTeh.innerHTML) * 20000;
+    totalcakeHarga = parseInt(totalCake.innerHTML) * 15000;
+    totalsurabiHarga = parseInt(totalSurabi.innerHTML) * 12000;
+    totalshakeHarga = parseInt(totalShake.innerHTML) * 15000;
+    totalbobaHarga = parseInt(totalBoba.innerHTML) * 20000;
 
     totalHargaMakanan.innerHTML = totalcakeHarga + totalsurabiHarga;
     totalHargaMinuman.innerHTML = totalshakeHarga + totalbobahHarga;
