@@ -27,7 +27,7 @@ function TambahMakan(anekamakanan) {
             totalCake.innerHTML = currentTotal;
             break;
         case "Ayomakansurabi":
-            var currentTotal = jumlahAyomakansurabi.innerHTML;
+            var currentTotal = jumlahAyoMakansurabi.innerHTML;
             currentTotal = parseInt(currentTotal);
             currentTotal++;
             jumlahAyoMakansurabi.innerHTML = currentTotal;
@@ -136,7 +136,7 @@ function hitungTotalBeli() {
     totalbobaHarga = parseInt(totalBoba.innerHTML) * 20000;
 
     totalHargaMakanan.innerHTML = totalcakeHarga + totalsurabiHarga;
-    totalHargaMinuman.innerHTML = totalshakeHarga + totalbobahHarga;
+    totalHargaMinuman.innerHTML = totalshakeHarga + totalbobaHarga;
 
     statusButtonCM();
 }
@@ -165,8 +165,8 @@ function statusButtonCM() {
         totalshakekHarga == 0 &&
         totalbobaHarga == 0
     ) {
-        document.getElementById("button_CO").disabled = true;
+        document.getElementById("button_CO").enabled= true;
     } else {
-        document.getElementById("button_CO").disabled = false;
+        document.getElementById("button_CO").enabled = false;
     }
 }
