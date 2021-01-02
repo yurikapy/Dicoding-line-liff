@@ -73,32 +73,32 @@ function KurangMakan(anekamakanan) {
     hitungTotalBeli();
 }
 
-function NambahMinuman(jenisMinuman) {
-    switch (jenisMinuman) {
-        case "iniEsJeruk":
-            var currentTotal = jumlahEsJeruk.innerHTML;
+function TambahMinum(anekaMinuman) {
+    switch (anekaMinuman) {
+        case "inishakeduren":
+            var currentTotal = jumlahsakdur.innerHTML;
             currentTotal = parseInt(currentTotal);
             currentTotal++;
-            jumlahEsJeruk.innerHTML = currentTotal;
-            totalEsJeruk.innerHTML = currentTotal;
+            jumlahsakdur.innerHTML = currentTotal;
+            totalshake.innerHTML = currentTotal;
             break;
-        case "iniEsTeh":
-            var currentTotal = jumlahEsTeh.innerHTML;
+        case "iniBoba":
+            var currentTotal = jumlahBoba.innerHTML;
             currentTotal = parseInt(currentTotal);
             currentTotal++;
-            jumlahEsTeh.innerHTML = currentTotal;
-            totalEsTeh.innerHTML = currentTotal;
+            jumlahBoba.innerHTML = currentTotal;
+            totalboba.innerHTML = currentTotal;
             break;
         default:
             break;
     }
-    hitungTotalBelanja();
+    hitungTotalBeli();
 }
 
-function PenguranganMinuman(jenisMinuman) {
-    switch (jenisMinuman) {
-        case "iniEsJeruk":
-            var currentTotal = jumlahEsJeruk.innerHTML;
+function KurangMinum(anekaMinuman) {
+    switch (anekaMinuman) {
+        case "inishakeduren":
+            var currentTotal = jumlahsakdur.innerHTML;
             currentTotal = parseInt(currentTotal);
 
             if (currentTotal == 0) {
@@ -107,11 +107,11 @@ function PenguranganMinuman(jenisMinuman) {
                 currentTotal--;
             }
 
-            jumlahEsJeruk.innerHTML = currentTotal;
-            totalEsJeruk.innerHTML = currentTotal;
+            jumlahsakdur.innerHTML = currentTotal;
+            totalshake.innerHTML = currentTotal;
             break;
-        case "iniEsTeh":
-            var currentTotal = jumlahEsTeh.innerHTML;
+        case "iniBoba":
+            var currentTotal = jumlahBoba.innerHTML;
             currentTotal = parseInt(currentTotal);
 
             if (currentTotal == 0) {
@@ -120,23 +120,23 @@ function PenguranganMinuman(jenisMinuman) {
                 currentTotal--;
             }
 
-            jumlahEsTeh.innerHTML = currentTotal;
-            totalEsTeh.innerHTML = currentTotal;
+            jumlahBoba.innerHTML = currentTotal;
+            totalboba.innerHTML = currentTotal;
             break;
         default:
             break;
     }
-    hitungTotalBelanja();
+    hitungTotalBeli();
 }
 
-function hitungTotalBelanja() {
-    totalPecelLeleHarga = parseInt(totalPecelLele.innerHTML) * 15000;
-    totalAyamPenyetHarga = parseInt(totalAyamPenyet.innerHTML) * 20000;
-    totalEsJerukHarga = parseInt(totalEsJeruk.innerHTML) * 5000;
-    totalEsTehHarga = parseInt(totalEsTeh.innerHTML) * 4000;
+function hitungTotalBeli() {
+    totalcakeHarga = parseInt(totalcake.innerHTML) * 15000;
+    totalsurabiHarga = parseInt(totalsurabi.innerHTML) * 12000;
+    totalshakeHarga = parseInt(totalEsJeruk.innerHTML) * 15000;
+    totalbobaHarga = parseInt(totalEsTeh.innerHTML) * 20000;
 
-    totalHargaMakanan.innerHTML = totalPecelLeleHarga + totalAyamPenyetHarga;
-    totalHargaMinuman.innerHTML = totalEsJerukHarga + totalEsTehHarga;
+    totalHargaMakanan.innerHTML = totalcakeHarga + totalsurabiHarga;
+    totalHargaMinuman.innerHTML = totalshakeHarga + totalbobahHarga;
 
     statusButtonCM();
 }
@@ -144,26 +144,26 @@ function hitungTotalBelanja() {
 function checkoutCO() {
     var namaUser = document.getElementById("card_nama_user");
     var strukBelanja = "Hai, " + namaUser.innerHTML + "\n\n" +
-        "Terimakasih telah memesan makanan dan minuman di PECEL LELE CAK MAN \n" +
-        "Berikut adalah rincian pesanan anda: \n\n" +
-        totalPecelLele.innerHTML + " item Pecel Lele: Rp. " + totalPecelLeleHarga + "\n" +
-        totalAyamPenyet.innerHTML + " item Ayam Penyet: Rp. " + totalAyamPenyetHarga + "\n" +
-        totalEsJeruk.innerHTML + " item Es Jeruk: Rp. " + totalEsJerukHarga + "\n" +
-        totalEsTeh.innerHTML + " item Es Teh: Rp. " + totalEsTehHarga + "\n\n" +
+        "Terimakasih telah PESAN DI AYO MAKAN:))\n" +
+        "INI LAHHH rincian harus anda bayar : \n\n" +
+        totalcake.innerHTML + " pcs : Rp. " + totalcakeHarga + "\n" +
+        totalsurabi.innerHTML + " pcs: Rp. " + totalsurabiHarga + "\n" +
+        totalshake.innerHTML + " pcs: Rp. " + totalshakeHarga + "\n" +
+        totalboba.innerHTML + " pcs: Rp. " + totalbobaHarga + "\n\n" +
         "Maka,\n" +
         "Total harga makanan: Rp. " + totalHargaMakanan.innerHTML + "\n" +
         "Total harga minuman: Rp. " + totalHargaMinuman.innerHTML + "\n\n" +
-        "Silahkan lakukan proses pembayaran di kasir ya :D";
+        "Silahkan lakukan payment yang disediakan ";
 
     return strukBelanja;
 }
 
 function statusButtonCM() {
     if (
-        totalPecelLeleHarga == 0 &&
-        totalAyamPenyetHarga == 0 &&
-        totalEsJerukHarga == 0 &&
-        totalEsTehHarga == 0
+        totalcakeHarga == 0 &&
+        totalsurabiPenyetHarga == 0 &&
+        totalshakekHarga == 0 &&
+        totalbobaHarga == 0
     ) {
         document.getElementById("button_CO").disabled = true;
     } else {
