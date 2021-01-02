@@ -76,7 +76,7 @@ function KurangMakan(anekamakanan) {
 function TambahMinum(anekaMinuman) {
     switch (anekaMinuman) {
         case "inishakeduren":
-            var currentTotal = jumlahsakdur.innerHTML;
+            var currentTotal = jumlahSakdur.innerHTML;
             currentTotal = parseInt(currentTotal);
             currentTotal++;
             jumlahsakdur.innerHTML = currentTotal;
