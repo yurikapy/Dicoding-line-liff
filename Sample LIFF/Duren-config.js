@@ -15,7 +15,7 @@ var totalBoba = document.getElementById("bobatotal");
 var totalCakeHarga;
 var totalSurabiHarga;
 var totalShakeHarga;
-var totalobaHarga;
+var totalBobaHarga;
 
 function TambahMakan(anekamakanan) {
     switch (anekamakanan) {
@@ -130,13 +130,13 @@ function KurangMinum(anekaMinuman) {
 }
 
 function hitungTotalBeli() {
-    totalcakeHarga = parseInt(totalCake.innerHTML) * 15000;
-    totalsurabiHarga = parseInt(totalSurabi.innerHTML) * 12000;
-    totalshakeHarga = parseInt(totalShake.innerHTML) * 15000;
-    totalbobaHarga = parseInt(totalBoba.innerHTML) * 20000;
+    totalCakeHarga = parseInt(totalCake.innerHTML) * 15000;
+    totalSurabiHarga = parseInt(totalSurabi.innerHTML) * 12000;
+    totalShakeHarga = parseInt(totalShake.innerHTML) * 15000;
+    totalBobaHarga = parseInt(totalBoba.innerHTML) * 20000;
 
-    totalHargaMakanan.innerHTML = totalcakeHarga + totalsurabiHarga;
-    totalHargaMinuman.innerHTML = totalshakeHarga + totalbobaHarga;
+    totalHargaMakanan.innerHTML = totalCakeHarga + totalSurabiHarga;
+    totalHargaMinuman.innerHTML = totalShakeHarga + totalBobaHarga;
 
     statusButtonCM();
 }
