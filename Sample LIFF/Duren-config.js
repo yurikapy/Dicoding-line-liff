@@ -163,8 +163,8 @@ function statusButtonCM() {
         totalCakeHarga == 0 &&
         totalSurabiHarga == 0 &&
         totalShakekHarga == 0 &&
-        totalBobaHarga == 0 &&
-    ) {
+        totalBobaHarga == 0 
+    ){
         document.getElementById("button_CO").disabled= true;
     } else {
         document.getElementById("button_CO").disabled = false;
