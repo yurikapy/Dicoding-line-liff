@@ -165,8 +165,8 @@ function statusButtonCM() {
         totalShakekHarga == 0 &&
         totalBobaHarga == 0 
     ){
-        document.getElementById("button_CO").disabled= true;
+        document.getElementById("button_CO").enabled= true;
     } else {
-        document.getElementById("button_CO").disabled = false;
+        document.getElementById("button_CO").enabled = false;
     }
 }
