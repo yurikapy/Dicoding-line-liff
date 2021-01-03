@@ -27,7 +27,7 @@ button {
 }
  
 #code-block {
-    background-image:url("image.jpg");
+    background-image:url("img/image.jpg");
     border: 1px solid #999;
     display: block;
     padding: 20px;
