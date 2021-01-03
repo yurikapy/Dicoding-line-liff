@@ -80,7 +80,7 @@ function TambahMinum(anekaMinuman) {
             currentTotal = parseInt(currentTotal);
             currentTotal++;
             jumlahSakdur.innerHTML = currentTotal;
-            totalshake.innerHTML = currentTotal;
+            totalShake.innerHTML = currentTotal;
             break;
         case "iniBoba":
             var currentTotal = jumlahBoba.innerHTML;
